@@ -1,0 +1,31 @@
+<Norm>
+Norm이란 결국엔 어떤 값의 크기를 계산하여, 비교가 가능하게끔하는 어떤 함수 정도.
+
+- L1 Norm(Manhatten Distance)
+두 개의 벡터를 빼고, 절대값을 취한 뒤, 합한 것이다.
+
+- L2 Norm(Euclidean)
+두 개의 벡터의 각 원소를 빼고, 제곱을 하고, 합치고 루트를 씌운 것이다.
+
+- L1 Loss 
+이러한 Norm을 기준으로 만들어진 L1 Loss 수식 -> 두 개의 벡터가 들어가던 자리에 실제 타겟값(y_true)와 예측 타겟값(y_pred)이 들어갔을 뿐
+
+- L2 Loss
+L2 Norm과 비교했을 때 최종적으로 루트를 취하지 않는다는 차이가 있다.
+따라서 L2 Loss는 제곱을 취하기에, 이상치가 들어오면 오차가 제곱이 돼서 이상치에 영향을 더 받기 때문에 이상치가 있는 경우 적용하기 힘든 방법론이다.
+
+<Regularization>
+보통 번역은 '정규화' 라고 하지만 '일반화' 라고 하는 것이 이해에는 더 도움
+정규화는 Overfitting 을 예방하고 Generalization(일반화) 성능을 높이는데 도움
+
+- L1 Regularization 
+(L1 Regularization을 사용하는 선형 회귀 모델을 Lasso model이라고도 함.)
+
+기존 Loss에 절댓값만큼의 어떤 패널티를 달아줌으로써 Cost가 더 커지게 만든 셈인데, 모델 Weight의 과도한 변화를 막는다.
+Sparse feature에 의존한 모델에 L1 Regularization을 사용하면, 불필요한 Feature에 대응하는 Weight를 정확히 0으로 만들어버려, Feature selection의 효과를 낸다.
+
+- L2 Regularization
+(L2 Reg을 사용하는 선형 회귀 모델을 Ridge model이라고 함.)
+
+불필요한 Feature(이상치)에 대응하는 Weight를 0에 가깝게 만들 뿐, 0으로 만들지는 않는다. 
+이런 특성 때문에, 강하게 밀어붙이는 L1 Reg반해 L2 Reg은 선형 모델의 일반화 능력을 항상 개선시키는 것으로 알려져 있다. 
