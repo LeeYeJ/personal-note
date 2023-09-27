@@ -1,0 +1,24 @@
+Hotfix : 
+
+- 릴리즈를 빠르게 패치하는 데 사용.
+
+- 프로젝트에서 버그 수정할 때 main(master)에서 따로 branch 파서 수정하고 pull request 해준다.
+
+- 수정사항이 받아들여지면 main과 develop branch에 merge 해준다. 
+  => conflict 발생 가능(다양한 케이스가 있겠으나 나는 이전 commit log에서 발생. (수정 구간의 상태 변환 선택(current, incoming))
+  Current Change : 현재 HEAD의 내용
+  Incoming Change : merge되는 다른 브랜치의 내용
+
+- 완료 후 Hotfix branch 삭제
+
+(명령어)
+git checkout main   # main branch checkout 
+git checkout -b hotfix_branch  # create hotfix_branch
+(merge 부분 생략)
+branch -D hotfix_branch  # delete hotfix_branch
+
+========== merge / rebase ==========  => 따로 뺴서 정리
+
+- 현재 내 head 방향을 확인하고 필요하다면 rebase 진행하고 그 base에 commit(있다면)을 쌓아준다. 
+
+- git merge --continue => merge 충돌이 해결되면 --continue 옵션을 사용하여 리베이스를 재개
