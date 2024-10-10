@@ -1,0 +1,6 @@
+내가 가져오고 싶은 file의 혹은 module의 commit들만 가져와서 repo 팔 수 있을까?
+
+https://github.com/newren/git-filter-repo
+
+git-filter-repo를 활용하여 path로 내가 가져오려는 파일의 관련 commit들로 새로운 repo 생성 가능
+(사용할 때 커밋 바뀔 수 있으니 기존의 레포에서 복사해서 사용하는 것이 안전)
