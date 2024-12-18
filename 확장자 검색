@@ -1,0 +1,3 @@
+# 폴더 내에 모든 file들 recursive 하게 확인해서 존재하는 확장자만 print 명령어 in linux
+
+ls -p | grep -v / | sed -n 's/.*\.\([a-zA-Z0-9]*\)$/\1/p' | sort | uniq
